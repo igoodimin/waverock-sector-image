@@ -152,4 +152,9 @@ body { font-weight: 500; }
 @media (max-width: 760px) {
   .layout { display: flex; flex-direction: column; padding: 20px; }
   .panel { padding-right: 0; border-right: 0; }
+  /* 모바일: 미리보기 → PNG 다운로드 → 나머지 설정 순서 */
+  .layout { gap: 22px; }
+  .panel { display: contents; }
+  .preview { order: -2; }
+  .download-field { order: -1; }
 }
