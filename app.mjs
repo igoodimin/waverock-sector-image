@@ -12,6 +12,15 @@ const state = {
   overrides: {},   // `${branch}|${year}-${month}` → {슬롯키: 글}
   editing: null,
 };
+// 세팅 달력에서 넘어오면 주소의 지점·월을 씁니다. 예: ?branch=서면점&year=2026&month=11
+const query = new URLSearchParams(location.search);
+const queryYear = Number(query.get('year')), queryMonth = Number(query.get('month'));
+if (Object.hasOwn(BRANCHES, query.get('branch'))) state.branch = query.get('branch');
+if (Number.isInteger(queryYear) && queryYear >= 1900 && queryYear <= 2200 && Number.isInteger(queryMonth) && queryMonth >= 1 && queryMonth <= 12) {
+  state.year = queryYear;
+  state.month = queryMonth;
+}
+const CALENDAR_URL = 'https://igoodimin.github.io/waverock-Routesetting-calendar/';
 const images = {};
 let loadSeq = 0, drawSeq = 0;
 
@@ -155,6 +164,9 @@ function renderControls() {
     return b;
   }));
   $('monthLabel').textContent = `${state.year}년 ${state.month}월`;
+  const params = new URLSearchParams({branch: state.branch, year: state.year, month: state.month});
+  $('calendarLink').href = `${CALENDAR_URL}?${params}`;
+  history.replaceState(null, '', `?${params}`);
 }
 
 function renderEvents() {

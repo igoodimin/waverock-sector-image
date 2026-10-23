@@ -60,7 +60,7 @@ h1 { margin: 0; font-size: 24px; }
 .primary, .ghost { padding: 13px; border-radius: 8px; font-weight: 700; }
 .primary { border: 0; background: var(--accent); color: #fff; font-size: 16px; }
 .primary:disabled { opacity: .5; cursor: wait; }
-.ghost { border: 1px solid var(--line); background: var(--card); font-size: 14px; }
+.ghost { border: 1px solid var(--line); background: var(--card); font-size: 14px; color: var(--ink); text-align: center; text-decoration: none; }
 .hint { margin: 0; font-size: 13px; color: var(--muted); line-height: 1.5; }
 
 .preview { min-width: 0; }
