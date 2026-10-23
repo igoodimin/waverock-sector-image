@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WAVEROCK · 지점별 세팅 이미지</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="layout">
+    <section class="panel">
+      <h1>지점별 세팅 이미지</h1>
+      <p class="sub">세팅 달력 일정을 불러와 이미지로 만듭니다.</p>
+
+      <div class="field">
+        <span class="label">지점</span>
+        <div class="tabs" id="branches"></div>
+      </div>
+
+      <div class="field">
+        <span class="label">월</span>
+        <div class="month">
+          <button type="button" id="prev" aria-label="이전 달">←</button>
+          <strong id="monthLabel"></strong>
+          <button type="button" id="next" aria-label="다음 달">→</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <span class="label">불러온 일정</span>
+        <ul class="events" id="events"></ul>
+        <p class="status" id="status"></p>
+        <button type="button" class="ghost" id="reload">달력에서 다시 불러오기</button>
+      </div>
+
+      <div class="field">
+        <button type="button" class="primary" id="download">PNG 다운로드</button>
+        <p class="hint">2160 × 2700 px · 150 dpi<br>1080 × 1350 디자인의 2배 해상도</p>
+      </div>
+      <p class="hint">미리보기의 날짜나 아래 문구를 클릭하면 글을 고칠 수 있어요.</p>
+    </section>
+
+    <section class="preview">
+      <div class="stage" id="stage">
+        <canvas id="canvas" width="2160" height="2700"></canvas>
+        <div class="hotspots" id="hotspots"></div>
+      </div>
+    </section>
+  </main>
+  <script type="module" src="app.mjs"></script>
+</body>
+</html>
