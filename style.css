@@ -61,6 +61,8 @@ h1 { margin: 0; font-size: 24px; }
 .primary { border: 0; background: var(--accent); color: #fff; font-size: 16px; }
 .primary:disabled { opacity: .5; cursor: wait; }
 .ghost { border: 1px solid var(--line); background: var(--card); font-size: 14px; color: var(--ink); text-align: center; text-decoration: none; }
+.calendar-link { background: #dcd9cf; border-color: #cbc7bb; }
+.calendar-link:hover { background: #d1cdc1; }
 .hint { margin: 0; font-size: 13px; color: var(--muted); line-height: 1.5; }
 
 .preview { min-width: 0; }
