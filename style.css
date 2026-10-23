@@ -14,7 +14,6 @@ body {
   color: var(--ink);
   font-family: Pretendard, -apple-system, sans-serif;
 }
-.panel .wr-home { align-self: flex-start; }
 button { font: inherit; cursor: pointer; }
 
 .layout {
@@ -129,3 +128,28 @@ canvas { display: block; width: 100%; height: auto; background: #fff; }
   font-size: 13px;
 }
 .menu button.done { background: #fff; color: #000; font-weight: 700; }
+
+/* ── 디자인 툴 공통 레이아웃 (세팅 달력 기준, ui.css 토큰) ── */
+body { font-weight: 500; }
+.layout { grid-template-columns: var(--wr-sidebar-w, 280px) minmax(0, 1fr); gap: 28px; max-width: none; padding: 32px; }
+.panel { gap: 0; padding-right: 18px; border-right: 1px solid var(--line); }
+.panel > .sub { margin: 0 0 8px; font-size: 13px; line-height: 1.6; }
+.field { gap: 8px; padding: 20px 0; border-top: 1px solid var(--line); }
+.panel > .sub + .field { border-top: 0; padding-top: 8px; }
+.label { font-size: 15px; font-weight: 700; color: var(--ink); margin-bottom: 4px; }
+.tabs button, .month, .ghost, .primary { min-height: var(--wr-control-h, 44px); border-radius: var(--wr-radius, 8px); font-size: 14px; font-weight: 700; }
+.tabs button { padding: 0; border: 0; background: var(--wr-soft, #ececec); color: var(--ink); }
+.tabs button:hover { background: var(--wr-soft-hover, #e2e2e2); }
+.month button { padding: 0 16px; font-size: 16px; }
+.month strong { font-size: 15px; }
+.ghost { display: flex; align-items: center; justify-content: center; padding: 0 15px; border: 0; background: var(--wr-soft, #ececec); }
+.ghost:hover { background: var(--wr-soft-hover, #e2e2e2); }
+.primary { padding: 0 15px; font-size: 14px; }
+.panel > .hint:last-child { padding-top: 16px; border-top: 1px solid var(--line); }
+.preview { padding-top: 4px; }
+@media (max-width: 1100px) { .layout { grid-template-columns: var(--wr-sidebar-w-mid, 240px) minmax(0, 1fr); gap: 20px; padding: 24px; } }
+@media (max-width: 820px) { .layout { grid-template-columns: var(--wr-sidebar-w-mid, 240px) minmax(0, 1fr); } }
+@media (max-width: 760px) {
+  .layout { display: flex; flex-direction: column; padding: 20px; }
+  .panel { padding-right: 0; border-right: 0; }
+}
